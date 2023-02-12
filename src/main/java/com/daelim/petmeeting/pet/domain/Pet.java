@@ -1,13 +1,15 @@
 package com.daelim.petmeeting.pet.domain;
 
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+
 import lombok.Builder;
 
-@Builder
-@Table(name = "tbl_pet")
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+//@Builder
+//@Table(name = "tbl_pet")
 public class Pet {
 
-    @Id
+//    @Id
     private Long pid;
 }
