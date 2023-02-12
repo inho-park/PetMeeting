@@ -19,24 +19,26 @@ import java.time.LocalDateTime;
 public class User extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long uid;
+    private Long uid;
 
     @Column(length = 64, unique = true, nullable = false)
-    String email;
+    private String email;
 
     @Column(length = 100, nullable = false)
-    String address;
+    private String address;
 
     @Column(length = 100, nullable = false)
-    String password;
+    private String password;
 
     @Column(length = 45, nullable = false)
-    String username;
+    private String username;
 
     @Column(length = 45, nullable = false)
-    String userid;
+    private String userid;
 
-    @Convert(converter = BooleanToYNConverter.class)
-    boolean enable;
+//    @Convert(converter = BooleanToYNConverter.class)
+    @Column(columnDefinition = "tinyint(1) default 1")
+    private boolean enable;
+
 
 }
