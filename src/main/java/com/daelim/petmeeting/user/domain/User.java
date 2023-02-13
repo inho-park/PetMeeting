@@ -1,14 +1,10 @@
 package com.daelim.petmeeting.user.domain;
 
 import com.daelim.petmeeting.common.domain.BaseTimeEntity;
-import com.daelim.petmeeting.common.domain.BooleanToYNConverter;
+//import com.daelim.petmeeting.common.domain.BooleanToYNConverter;
 import lombok.*;
-import org.hibernate.annotations.Type;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 @Getter

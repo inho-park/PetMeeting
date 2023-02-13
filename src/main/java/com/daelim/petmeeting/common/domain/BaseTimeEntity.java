@@ -21,10 +21,10 @@ public abstract class BaseTimeEntity implements Serializable {
     @CreatedDate
     @Column(updatable = false)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
-    private LocalDateTime createdDate;
+    private LocalDateTime regDate;
 
     @LastModifiedDate
     @Column(updatable = true)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
-    private LocalDateTime modifiedDate;
+    private LocalDateTime modDate;
 }
