@@ -38,3 +38,6 @@ out/
 
 ### yml 보안 ###
 application.yml
+settings.gradle
+gradlew
+gradlew.bat
