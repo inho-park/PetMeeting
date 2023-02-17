@@ -1,5 +1,6 @@
 package com.daelim.petmeeting.board.pReply;
 
+import com.daelim.petmeeting.board.domain.BaseReply;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,7 +14,7 @@ import javax.persistence.*;
 @Table(name = "tbl_preply")
 @NoArgsConstructor
 @AllArgsConstructor
-public class PReply {
+public class PReply extends BaseReply {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long prid;
