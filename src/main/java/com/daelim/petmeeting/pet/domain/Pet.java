@@ -44,4 +44,5 @@ public class Pet extends BaseTimeEntity {
     // add constraint 해준 후 사용
     @ManyToOne(fetch = FetchType.LAZY)
     private User tbl_user;
+
 }

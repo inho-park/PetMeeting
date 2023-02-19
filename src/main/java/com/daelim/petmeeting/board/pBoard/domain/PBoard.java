@@ -1,6 +1,8 @@
-package com.daelim.petmeeting.board.pBoard.controller;
+package com.daelim.petmeeting.board.pBoard.domain;
 
 import com.daelim.petmeeting.board.domain.BaseBoard;
+import com.daelim.petmeeting.pet.domain.Pet;
+import com.daelim.petmeeting.user.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -19,12 +21,19 @@ public class PBoard extends BaseBoard {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long pbid;
 
-    @Column(columnDefinition = "tinyint(1) default 1")
-    private boolean pcategory;
+    @Column(columnDefinition = "tinyint(1) default 1", name = "pcategory")
+    private boolean pCategory;
 
     @Column(columnDefinition = "default 0", nullable = false)
     private int view;
 
     @Column(columnDefinition = "default 0", nullable = false)
     private int like;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User tbl_user;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Pet tbl_pet;
 }
+

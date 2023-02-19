@@ -1,6 +1,8 @@
 package com.daelim.petmeeting.board.cReply;
 
+import com.daelim.petmeeting.board.cBoard.domain.CBoard;
 import com.daelim.petmeeting.board.domain.BaseReply;
+import com.daelim.petmeeting.user.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -19,5 +21,9 @@ public class CReply extends BaseReply {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long crid;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private CBoard tbl_cboard;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User tbl_user;
 }
