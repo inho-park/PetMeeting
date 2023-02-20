@@ -27,5 +27,5 @@ public class CBoard extends BaseBoard {
     private int view;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private User tbl_user;
+    private User user;
 }

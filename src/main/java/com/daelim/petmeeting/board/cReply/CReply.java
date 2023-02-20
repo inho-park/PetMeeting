@@ -22,8 +22,8 @@ public class CReply extends BaseReply {
     private Long crid;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private CBoard tbl_cboard;
+    private CBoard cboard;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private User tbl_user;
+    private User user;
 }
