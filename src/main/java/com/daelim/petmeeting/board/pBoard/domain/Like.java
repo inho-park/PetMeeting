@@ -20,8 +20,8 @@ public class Like {
     private Long lid;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private User tbl_user;
+    private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private PBoard tbl_pboard;
+    private PBoard pBoard;
 }

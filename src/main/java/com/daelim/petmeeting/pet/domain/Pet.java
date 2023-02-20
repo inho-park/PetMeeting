@@ -43,6 +43,6 @@ public class Pet extends BaseTimeEntity {
     // foreign key 로 tbl_user 의 PK 값을 이용해 조회할 경우를 대비해 uid 를
     // add constraint 해준 후 사용
     @ManyToOne(fetch = FetchType.LAZY)
-    private User tbl_user;
+    private User user;
 
 }

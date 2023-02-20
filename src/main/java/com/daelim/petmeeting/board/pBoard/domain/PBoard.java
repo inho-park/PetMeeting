@@ -31,9 +31,9 @@ public class PBoard extends BaseBoard {
     private int like;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private User tbl_user;
+    private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private Pet tbl_pet;
+    private Pet pet;
 }
 
