@@ -17,6 +17,6 @@ public abstract class BaseBoard extends BaseTimeEntity {
     @Column(length = 3000, nullable = false)
     private String content;
 
-    @Column(columnDefinition = "default 0")
-    private int view;
+    @Column(columnDefinition = "bigint default 0")
+    private long view;
 }

@@ -3,19 +3,17 @@ package com.daelim.petmeeting.pet.domain;
 
 import com.daelim.petmeeting.common.domain.BaseTimeEntity;
 import com.daelim.petmeeting.user.domain.User;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
 @Builder
-@Table(name = "tbl_pet")
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "tbl_pet")
+@ToString(exclude = "user")
 public class Pet extends BaseTimeEntity {
 
     @Id

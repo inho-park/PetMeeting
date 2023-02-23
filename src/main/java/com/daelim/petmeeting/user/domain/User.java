@@ -9,9 +9,9 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Builder
-@Table(name = "tbl_user")
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "tbl_user")
 public class User extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,6 +35,5 @@ public class User extends BaseTimeEntity {
 //    @Convert(converter = BooleanToYNConverter.class)
     @Column(columnDefinition = "tinyint(1) default 1")
     private boolean enable;
-
 
 }
