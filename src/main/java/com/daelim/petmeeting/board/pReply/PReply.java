@@ -22,7 +22,7 @@ public class PReply extends BaseReply {
     private Long prid;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private PBoard pboard;
+    private PBoard pBoard;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
