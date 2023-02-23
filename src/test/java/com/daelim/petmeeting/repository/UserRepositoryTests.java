@@ -14,19 +14,19 @@ public class UserRepositoryTests {
     @Autowired
     private UserRepository repository;
 
-    @Test
-    public void testInsert() {
-        IntStream.rangeClosed(1, 100).forEach(i -> {
-            User user = User.builder()
-                    .email("aaa@bbb.ccc "+i)
-                    .address("안양시 만안구 "+i)
-                    .userid("와꾸의 난 "+ i)
-                    .username("inho "+ i)
-                    .password("비밀번호486 "+ i)
-                    .enable(true)
-                    .build();
-            repository.save(user);
-
-        });
-    }
+//    @Test
+//    public void testInsert() {
+//        IntStream.rangeClosed(1, 100).forEach(i -> {
+//            User user = User.builder()
+//                    .email("aaa@bbb.ccc "+i)
+//                    .address("안양시 만안구 "+i)
+//                    .userid("와꾸의 난 "+ i)
+//                    .username("inho "+ i)
+//                    .password("비밀번호486 "+ i)
+//                    .enable(true)
+//                    .build();
+//            repository.save(user);
+//
+//        });
+//    }
 }
