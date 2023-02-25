@@ -1,0 +1,82 @@
+.BestPetShowTitle{
+    display: flex;
+}
+#BestPetShowText1{
+    margin-left: 200px;
+    color: #1e1e1e;
+    font-family: 'Pretendard';
+    font-weight: 800;
+    font-size: 25px;
+}
+#BestPetShowText2{
+    margin-left: 1180px;
+    border: #1e1e1e 1px solid;
+    border-radius: 50px;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+.BestPetShowPreview{
+    display: flex;
+}
+#BestPetShowPreview1{
+    margin-left: 200px;
+}
+#BestPetShowPreviewImg{
+    width: 339px;
+    height: 400px;
+}
+#BestPetShowPreviewText{
+    color: #1e1e1e;
+    font-family: 'Pretendard';
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+#BestPetShowPreview2{
+    margin-left: 50px;
+}
+.BestPetMarket{
+    margin-top: 60px;
+}
+.BestPetMarketTitle{
+    display: flex;
+}
+#BestPetMarketText1{
+    margin-left: 200px;
+    color: #1e1e1e;
+    font-family: 'Pretendard';
+    font-weight: 800;
+    font-size: 25px;
+}
+#BestPetMarketText2{
+    margin-left: 1125px;
+    border: #1e1e1e 1px solid;
+    border-radius: 50px;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+.BestPetMarketPreview{
+    display: flex;
+}
+#BestPetMarketPreview1{
+    margin-left: 200px;
+}
+#BestPetMarketPreviewImg{
+    width: 339px;
+    height: 400px;
+}
+#BestPetMarketPreviewText{
+    color: #1e1e1e;
+    font-family: 'Pretendard';
+    font-size: 20px;
+    font-weight: 600;
+}
+#BestPetMarketPreview2{
+    margin-left: 50px;
+}

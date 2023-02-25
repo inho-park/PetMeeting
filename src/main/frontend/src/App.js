@@ -1,22 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-import {useEffect, useState} from "react";
-import axios from 'axios';
+import PetMeetingHeader from "./PetMeetingHeader";
+import PetMeetingFooter from "./PetMeetingFooter";
+import PetMeetingTopBanner from "./PetMeetingTopBanner";
+import PetMeetingBestShow from "./PetMeetingBestShow";
+import PetMeetingCompany from "./PetMeetingCompany";
 
 function App() {
-    const [hello, setHello] = useState('')
+  return (
+    <div>
+        <PetMeetingHeader/>
+        {/*<PetMeetingTopBanner />*/}
+        {/*<PetMeetingBestShow />*/}
+        {/*<PetMeetingFooter />*/}
 
-    useEffect(() => {
-        axios.get('/main/hello')
-            .then(response => setHello(response.data))
-            .catch(error => console.log(error))
-    }, []);
 
-    return (
-        <div>
-             {hello}
-        </div>
-    );
+    </div>
+  );
 }
 
 export default App;
