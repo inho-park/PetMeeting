@@ -17,5 +17,8 @@ spring:
   thymeleaf:
     cache: false
 
+jwt:
+  secret:
+    VlwEyVBsYt9V7zq57TejMnVUyzblYcfPQye08f7MGVA9XkHa
 #server:
 #  port: 8081
