@@ -8,10 +8,11 @@ function App() {
   return (
     <div>
         <PetMeetingHeader/>
+        back-end/junseong
         <PetMeetingTopBanner />
         <PetMeetingBestShow />
         <PetMeetingFooter />
-        {/*<PetMeetingCompany />*/}
+
 
     </div>
   );
