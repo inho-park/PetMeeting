@@ -8,10 +8,11 @@ function App() {
   return (
     <div>
         <PetMeetingHeader/>
-        {/*<PetMeetingTopBanner />*/}
-        {/*<PetMeetingBestShow />*/}
-        {/*<PetMeetingFooter />*/}
-        {/*<PetMeetingCompany />*/}
+        back-end/junseong
+        <PetMeetingTopBanner />
+        <PetMeetingBestShow />
+        <PetMeetingFooter />
+
 
     </div>
   );
