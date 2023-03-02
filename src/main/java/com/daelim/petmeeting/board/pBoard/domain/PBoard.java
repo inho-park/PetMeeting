@@ -1,6 +1,6 @@
 package com.daelim.petmeeting.board.pBoard.domain;
 
-import com.daelim.petmeeting.board.domain.BaseBoard;
+import com.daelim.petmeeting.common.domain.BaseTimeEntity;
 import com.daelim.petmeeting.pet.domain.Pet;
 import com.daelim.petmeeting.user.domain.User;
 import lombok.*;
@@ -14,7 +14,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Table(name = "tbl_pboard")
 @ToString(exclude = "user")
-public class PBoard extends BaseBoard {
+public class PBoard extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long pbid;
@@ -30,5 +30,14 @@ public class PBoard extends BaseBoard {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Pet pet;
+
+    @Column(length = 45, nullable = false)
+    private String title;
+
+    @Column(length = 3000, nullable = false)
+    private String content;
+
+    @Column(columnDefinition = "bigint default 0")
+    private long view;
 }
 
