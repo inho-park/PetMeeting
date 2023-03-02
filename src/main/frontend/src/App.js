@@ -8,10 +8,10 @@ function App() {
   return (
     <div>
         <PetMeetingHeader/>
-        <PetMeetingTopBanner />
-        <PetMeetingBestShow />
-        <PetMeetingFooter />
-        <PetMeetingCompany />
+        {/*<PetMeetingTopBanner />*/}
+        {/*<PetMeetingBestShow />*/}
+        {/*<PetMeetingFooter />*/}
+        {/*<PetMeetingCompany />*/}
 
     </div>
   );
