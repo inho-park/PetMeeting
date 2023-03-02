@@ -13,6 +13,4 @@ public interface PBoardRepository extends JpaRepository<PBoard, Long> {
             , countQuery = "select count(pb) from PBoard pb")
     Page<Object[]> findByPCategory(@Param("category") boolean category, Pageable pageable);
 
-//    @Query("select ")
-//    Page<Object[]> getPBoardWithPCategory(Pageable pageable)
 }

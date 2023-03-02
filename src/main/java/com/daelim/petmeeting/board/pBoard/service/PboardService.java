@@ -1,11 +1,11 @@
 package com.daelim.petmeeting.board.pBoard.service;
 
-import com.daelim.petmeeting.board.dto.PageRequestDTO;
-import com.daelim.petmeeting.board.dto.PageResultDTO;
+import com.daelim.petmeeting.board.cReply.dto.PageRequestDTO;
+import com.daelim.petmeeting.board.cReply.dto.PageResultDTO;
 import com.daelim.petmeeting.board.pBoard.domain.PBoard;
 import com.daelim.petmeeting.board.pBoard.domain.PBoardRepository;
 import com.daelim.petmeeting.board.pBoard.dto.PBoardDTO;
-import com.daelim.petmeeting.pet.domain.PetRepository;
+import com.daelim.petmeeting.pet.domain.Pet;
 import com.daelim.petmeeting.user.domain.User;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -28,7 +28,7 @@ public class PboardService {
         Function<Object[], PBoardDTO> fn = (
                 entity -> entityToDTO((PBoard)entity[0],
                         (User)entity[1],
-                        (Long)entity[2])
+                        (Pet)entity[2])
         );
         Page<Object[]> result = pBoardRepository.findByPCategory(category,
                 pageRequestDTO.getPageable(Sort.by("regdate").descending()));
@@ -36,27 +36,33 @@ public class PboardService {
 //        Page<Object[]> result = repository.searchPage(
 //                pageRequestDTO.getType(),
 //                pageRequestDTO.getKeyword(),
-//                pageRequestDTO.getPageable(Sort.by("bno").descending()
+//                pageRequestDTO.getPageable(Sort.by("pbid").descending()
 //                )
 //        );
 
         return new PageResultDTO<>(result, fn);
     }
 
-
+    public Long retrieve(PBoardDTO dto) {
+        log.info("retrieve DTO : " + dto);
+        return pBoardRepository.save(dtoToEntity(dto)).getPbid();
+    }
 
     PBoard dtoToEntity(PBoardDTO dto) {
         User user = User.builder().email(dto.getWriterId()).build();
+        Pet pet = Pet.builder().pid(dto.getPid()).build();
         PBoard board = PBoard.builder()
                 .pbid(dto.getBno())
                 .title(dto.getTitle())
                 .content(dto.getContent())
                 .user(user)
+                .pet(pet)
                 .build();
         return board;
     }
 
-    PBoardDTO entityToDTO(PBoard board, User user, Long replyCount) {
+    PBoardDTO entityToDTO(PBoard board, User user, Pet pet) {
+
         PBoardDTO boardDTO = PBoardDTO.builder()
                 .bno(board.getPbid())
                 .title(board.getTitle())
@@ -64,6 +70,7 @@ public class PboardService {
                 .regDate(board.getRegDate())
                 .modDate(board.getModDate())
                 .writerId(user.getUserId())
+                .pid(pet.getPid())
                 .build();
 
         return boardDTO;

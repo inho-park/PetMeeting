@@ -1,4 +1,4 @@
-package com.daelim.petmeeting.board.dto;
+package com.daelim.petmeeting.board.cReply.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
