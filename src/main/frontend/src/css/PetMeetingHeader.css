@@ -1,0 +1,55 @@
+*{
+    margin-top:0px;
+    margin-left: 0px;
+    text-align: center;
+}
+
+
+.all{
+    width: 1900px;
+
+}
+#HeaderMenuBar {
+    position: fixed;
+    top: 0;
+    height: 90px;
+    width: 1900px;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    opacity: 90%;
+}
+#LogoImg{
+    margin-left: 1260px;
+    margin-right: 150px;
+
+}
+li{
+    text-decoration: none;
+    display: inline-block;
+    /*float: left;*/
+}
+a{
+    color: #1e1e1e;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    margin-right : 80px;
+    text-decoration: none;
+}
+#LogIn{
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 7px 30px;
+    border: #1e1e1e 1px solid;
+    border-radius: 10px;
+}
+#HeaderBannerImg{
+    height: 350px;
+    width: 1500px;
+    margin-top: 30px;
+    margin-left: 200px;
+}
