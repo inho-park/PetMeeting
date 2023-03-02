@@ -54,7 +54,7 @@ out/
 .vscode/
 
 ### yml 보안 ###
-#application.yml
+application.yml
 #settings.gradle
 #gradlew
 #gradlew.bat
