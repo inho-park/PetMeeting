@@ -1,6 +1,5 @@
 package com.daelim.petmeeting.user.controller;
 
-import com.daelim.petmeeting.user.domain.User;
 import com.daelim.petmeeting.user.dto.LoginRequestDTO;
 import com.daelim.petmeeting.user.dto.ResponseDTO;
 import com.daelim.petmeeting.user.dto.TokenInfo;
@@ -10,7 +9,6 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,9 +38,17 @@ public class UserController {
     }
 
     @PostMapping("/signin")
-    public TokenInfo signIn(@RequestBody LoginRequestDTO userLoginRequestDTO) {
-        String userId = userLoginRequestDTO.getUserId();
-        String password = userLoginRequestDTO.getPassword();
-        return userService.login(userId, password);
+    public ResponseEntity<ResponseDTO> signIn(@RequestBody LoginRequestDTO userLoginRequestDTO) {
+        try {
+            String userId = userLoginRequestDTO.getUserId();
+            String password = userLoginRequestDTO.getPassword();
+            ResponseDTO responseDTO = ResponseDTO.<TokenInfo>builder().data(Collections.singletonList(userService.login(userId, password))).build();
+            return ResponseEntity.ok().body(responseDTO);
+
+        } catch(Exception e) {
+            // 유저 정보는 항상 하나이므로 리스트로 만들어야 하는 ReponseDTO 를 사용하지 않고 UserDTO 를 리턴
+            ResponseDTO<?> responseDTO = ResponseDTO.builder().error(e.getMessage()).build();
+            return ResponseEntity.badRequest().body(responseDTO);
+        }
     }
 }
