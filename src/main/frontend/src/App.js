@@ -11,7 +11,7 @@ function App() {
         <PetMeetingTopBanner />
         <PetMeetingBestShow />
         <PetMeetingFooter />
-        <PetMeetingCompany />
+        {/*<PetMeetingCompany />*/}
 
     </div>
   );
