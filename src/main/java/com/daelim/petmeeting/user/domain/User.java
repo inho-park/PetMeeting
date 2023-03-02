@@ -37,13 +37,24 @@ public class User extends BaseTimeEntity implements UserDetails {
     private String address;
 
     @ElementCollection(fetch = FetchType.EAGER)
-    @Builder.Default
+    @CollectionTable(name = "user_roles")
     private List<String> roles = new ArrayList<>();
 
 //    @Convert(converter = BooleanToYNConverter.class)
     @Column(columnDefinition = "tinyint(1) default 1")
     private boolean enable;
 
+//    @Override
+//    public Collection<? extends GrantedAuthority> getAuthorities() {
+//        List<GrantedAuthority> auth = new ArrayList<GrantedAuthority>();
+//        if (this.userId.equals("admin")) {
+//            auth.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+//        } else {
+//            auth.add(new SimpleGrantedAuthority("ROLE_USER"));
+//        }
+//
+//        return auth;
+//    }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return this.roles.stream()

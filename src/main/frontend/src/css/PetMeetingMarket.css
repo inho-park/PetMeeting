@@ -1,0 +1,98 @@
+*{
+    margin-top:0px;
+    margin-left: 0px;
+    text-align: left;
+
+}
+#HeaderMenuBar {
+    position: fixed;
+    top: 0;
+    height: 90px;
+    width: 1900px;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    opacity: 90%;
+}
+#LogoImg{
+    margin-left: 260px;
+    margin-right: 150px;
+
+}
+span{
+    color: #1e1e1e;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    margin-right : 80px;
+}
+#LogIn{
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 7px 30px;
+    border: #1e1e1e 1px solid;
+    border-radius: 10px;
+}
+#MarketTitle{
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    color: #1e1e1e;
+    text-align: center;
+    padding-top: 30px;
+}
+#SearchText{
+    margin-top: 10px;
+    margin-bottom: 80px;
+    font-size: 20px;
+    border-radius: 15px;
+    padding: 5px;
+    font-family: 'Pretendard';
+    font-style: normal;
+    margin-left: 780px;
+}
+#SearchSubmit{
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e1e1e;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-left: 20px;
+}
+.Market{
+    margin-top: 60px;
+}
+.MarketTitle{
+    display: flex;
+}
+.MarketPreview{
+    display: flex;
+}
+.MarketPreviewRe{
+    display: flex;
+    margin-top: 30px;
+}
+#MarketPreview1{
+    margin-left: 220px;
+}
+#MarketPreviewImg{
+    width: 200px;
+    height: 150px;
+}
+#MarketPreviewText{
+    color: #1e1e1e;
+    font-family: 'Pretendard';
+    font-size: 20px;
+    font-weight: 600;
+}
+#MarketPreview2{
+    margin-left: 90px;
+}

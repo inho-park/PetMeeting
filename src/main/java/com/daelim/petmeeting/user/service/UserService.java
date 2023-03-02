@@ -1,5 +1,6 @@
 package com.daelim.petmeeting.user.service;
 
+import com.daelim.petmeeting.user.domain.Role;
 import com.daelim.petmeeting.user.domain.User;
 import com.daelim.petmeeting.user.domain.UserRepository;
 import com.daelim.petmeeting.user.dto.TokenInfo;
@@ -12,7 +13,10 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -22,12 +26,15 @@ import java.util.Optional;
 public class UserService {
     @Autowired
     private UserRepository userRepository;
-
     private final JwtTokenProvider jwtTokenProvider;
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
 
 
+    @Transactional
     public String create(final UserDTO dto)  {
+        List<String> roles = new ArrayList<>();
+        roles.add(String.valueOf(Role.ROLE_USER));
+
         User user = User.builder()
                 .userId(dto.getUserId())
                 .name(dto.getName())
@@ -35,8 +42,10 @@ public class UserService {
                 .password(dto.getPassword())
                 .email(dto.getEmail())
                 .enable(true)
+                .roles(roles)
                 .build();
         userRepository.save(user);
+
         log.info("create : {}", dto.getUserId());
         return dto.getUserId();
     }
@@ -51,6 +60,8 @@ public class UserService {
         UsernamePasswordAuthenticationToken authenticationToken
                 = new UsernamePasswordAuthenticationToken(userId, password);
 
+        log.info("id : {} , password {}", userId, password);
+
         // 2. 실제 검증 (사용자 비밀번호 체크)이 이루어지는 부분
         // authenticate 매서드가 실행될 때 CustomUserDetailsService 에서 만든 loadUserByUsername 메서드가 실행
         Authentication authentication = authenticationManagerBuilder
@@ -59,6 +70,7 @@ public class UserService {
 
         // 3. 인증 정보를 기반으로 JWT 토큰 생성
         TokenInfo tokenInfo = jwtTokenProvider.generateToken(authentication);
+
 
         return tokenInfo;
     }
