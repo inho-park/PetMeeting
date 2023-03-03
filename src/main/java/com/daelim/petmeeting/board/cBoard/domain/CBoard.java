@@ -32,4 +32,12 @@ public class CBoard extends BaseTimeEntity {
 
     @Column(columnDefinition = "bigint default 0")
     private long view;
+
+    public void changeTitle(String title){
+        this.title = title;
+    }
+
+    public void changeContent(String content){
+        this.content = content;
+    }
 }
