@@ -13,4 +13,10 @@ public interface PBoardRepository extends JpaRepository<PBoard, Long> {
             , countQuery = "select count(pb) from PBoard pb")
     Page<Object[]> findByPCategory(@Param("category") boolean category, Pageable pageable);
 
+    @Query( value = "select pb, u, p " +
+            "from PBoard pb " +
+            "left join pb.user u " +
+            "left join pb.pet p " +
+            "where pb.pbid =:bno")
+    Object getPBoardByBno(@Param("bno") Long bno);
 }
