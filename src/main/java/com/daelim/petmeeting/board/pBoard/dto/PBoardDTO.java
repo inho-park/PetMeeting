@@ -13,6 +13,7 @@ public class PBoardDTO {
     private Long bno;
     private String title;
     private String content;
+    private Long pid;
     private String writerId;
     private LocalDateTime regDate;
     private LocalDateTime modDate;

@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Pre-Onboarding 3주차 과제 2) 차트 페이지와 게시판 만들기
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+안녕하세요! JUSTCODE 6기 과정에서 진행한 Pre-Onboarding에 참여한 김진영입니다. <br/>
+3주차 두 번째 과제인 **차트 페이지와 게시판 만들기**입니다.
 
-## Available Scripts
+**개발기간 :** 22.10.15 ~ 22.10.19 (5일)
 
-In the project directory, you can run:
+**개발인원 :** 1명 (본인)
 
-### `npm start`
+##  배포 링크
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+https://justcode-pre-onboarding-3-2.netlify.app/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 실행 방법
 
-### `npm test`
+1. Node.js를 최신버전으로 설치합니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. `npm install` 커맨드를 통해 dependencies를 설치해줍니다.
 
-### `npm run build`
+3. `npm run dev` 커맨드를 통해 프로젝트를 실행합니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 사용한 언어 및 라이브러리 
+`JavaScript` `React.js` `Recoil` `styled-components` `chart-js` `MUI` 등등
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 프로젝트 설명
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![d1d2](https://user-images.githubusercontent.com/100749629/196729537-a0461931-a014-4969-8aa7-543cdffa07e7.png)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Pre-Onboarding 3주차 두 번째 과제인 **차트 페이지와 게시판 만들기**입니다.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+과제 진행방식이 명확하게 제시되어있지 않아 제 나름대로 해석한대로 진행했습니다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+우선 프론트 개발자 혼자 어떻게 게시판과 로그인을 구현할까 생각하다가 **로컬 스토리지**를 데이터베이스처럼 사용하자는 생각을 했습니다.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+그래서 새로 회원가입한 아이디 목록, 계정 별 차트 데이터, 현재 로그인한 아이디, 게시글 데이터, 댓글 데이터 등을 로컬스토리지에 저장한 후 값을 가져와 **브라우저를 종료하거나 사이트를 나가도 재접속하면 계정, 게시글, 댓글 등이 유지되도록** 구현했습니다.
 
-## Learn More
+또 메인 차트는 chart-js 라이브러리를 사용했으며 새로 만드는 계정의 차트 데이터는 그냥 고정값으로 설정했습니다.
+그리고 MUI 라이브러리를 사용해 디자인을 깔끔하게 구현하려고 노력했고, 모바일 환경에서도 작동할 수 있도록 **반응형 페이지**로 구현했습니다.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+게시글 수정, 댓글 수정, 설정 다크모드 및 회원정보 수정도 구현하려 했으나, 혼자 진행하는 과제다보니 시간관계 상 모두 구현하지는 못했습니다.
+나중에 시간이 된다면 꼭 나머지 기능도 완성해보고 싶습니다.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 후기
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[블로그 링크](https://velog.io/@jinyoung985/Pre-Onboarding-%EC%B0%A8%ED%8A%B8-%ED%8E%98%EC%9D%B4%EC%A7%80%EC%99%80-%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0)로 접속하시면 확인하실 수 있습니다.
 
-### Analyzing the Bundle Size
+## Reference
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 이 프로젝트는 비영리목적으로 WINNING I와의 기업협업 과제제출용으로 제작한 프로젝트입니다.
