@@ -1,4 +1,4 @@
-package com.daelim.petmeeting.board.cReply;
+package com.daelim.petmeeting.board.cReply.domain;
 
 import com.daelim.petmeeting.board.cBoard.domain.CBoard;
 import com.daelim.petmeeting.common.domain.BaseTimeEntity;

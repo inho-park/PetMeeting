@@ -4,7 +4,7 @@ package com.daelim.petmeeting.board.cBoard.Service;
 import com.daelim.petmeeting.board.cBoard.domain.CBoard;
 import com.daelim.petmeeting.board.cBoard.cContoller.repository.CBoardRepository;
 import com.daelim.petmeeting.board.cBoard.dto.CBoardDTO;
-import com.daelim.petmeeting.board.cReply.CReplyRepository;
+import com.daelim.petmeeting.board.cReply.domain.CReplyRepository;
 import com.daelim.petmeeting.board.dto.PageRequestDTO;
 import com.daelim.petmeeting.board.dto.PageResultDTO;
 import com.daelim.petmeeting.user.domain.User;
