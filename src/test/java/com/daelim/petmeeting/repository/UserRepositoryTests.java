@@ -1,13 +1,10 @@
 package com.daelim.petmeeting.repository;
 
-import com.daelim.petmeeting.user.domain.User;
 import com.daelim.petmeeting.user.domain.UserRepository;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.stream.IntStream;
-
+// 모든 테스트 이상 무
 @SpringBootTest
 public class UserRepositoryTests {
 
