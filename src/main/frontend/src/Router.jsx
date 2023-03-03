@@ -2,7 +2,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 import Header from './components/header/Header';
 import Login from './components/login/Login';
-import SignUp from './pages/signup/Signup';
+import SignUp from './pages/signup/SignUp';
 import Home from './pages/home/Home';
 import Board from './pages/board/Board';
 import Detail from './pages/detail/Detail';
