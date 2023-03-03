@@ -1,5 +1,7 @@
 package com.daelim.petmeeting.repository;
 import com.daelim.petmeeting.board.cBoard.domain.CBoard;
+import com.daelim.petmeeting.board.cReply.domain.CReply;
+import com.daelim.petmeeting.board.cReply.domain.CReplyRepository;
 import com.daelim.petmeeting.user.domain.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +11,10 @@ import java.util.Optional;
 import java.util.stream.IntStream;
 
 @SpringBootTest
-public class ReplyRepositoryTests {
+public class CReplyRepositoryTests {
 
     @Autowired
-    private CReplyRepository creplyRepository;
+    private CReplyRepository cReplyRepository;
 
     @Test
     public void insertReply() {
@@ -32,7 +34,7 @@ public class ReplyRepositoryTests {
                     .user(user)
                     .build();
 
-            creplyRepository.save(creply);
+            cReplyRepository.save(creply);
 
         });
 
@@ -41,7 +43,7 @@ public class ReplyRepositoryTests {
     @Test
     public void readReply1() {
 
-        Optional<CReply> result = creplyRepository.findById(1L);
+        Optional<CReply> result = cReplyRepository.findById(1L);
 
         CReply creply = result.get();
 
