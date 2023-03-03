@@ -1,4 +1,4 @@
-package com.daelim.petmeeting.board.cReply.dto;
+package com.daelim.petmeeting.board.dto;
 
 import lombok.Data;
 import org.springframework.data.domain.Page;

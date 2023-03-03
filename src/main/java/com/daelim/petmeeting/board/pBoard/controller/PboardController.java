@@ -1,5 +1,5 @@
 package com.daelim.petmeeting.board.pBoard.controller;
-import com.daelim.petmeeting.board.cReply.dto.PageRequestDTO;
+import com.daelim.petmeeting.board.dto.PageRequestDTO;
 import com.daelim.petmeeting.board.pBoard.dto.PBoardDTO;
 import com.daelim.petmeeting.board.pBoard.service.PboardService;
 import lombok.extern.log4j.Log4j2;

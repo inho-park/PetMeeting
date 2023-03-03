@@ -1,7 +1,7 @@
 package com.daelim.petmeeting.board.pBoard.service;
 
-import com.daelim.petmeeting.board.cReply.dto.PageRequestDTO;
-import com.daelim.petmeeting.board.cReply.dto.PageResultDTO;
+import com.daelim.petmeeting.board.dto.PageRequestDTO;
+import com.daelim.petmeeting.board.dto.PageResultDTO;
 import com.daelim.petmeeting.board.pBoard.domain.PBoard;
 import com.daelim.petmeeting.board.pBoard.domain.PBoardRepository;
 import com.daelim.petmeeting.board.pBoard.dto.PBoardDTO;
