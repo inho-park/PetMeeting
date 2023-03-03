@@ -4,7 +4,7 @@ import { currentUserAtom } from '../../atom';
 import { IoPersonCircleSharp } from 'react-icons/io5';
 import { responsive, mainGray } from '../../styles/theme';
 import styled from 'styled-components';
-import pet from '../../assets/img/pet.PNG';
+import pet from '../../assets/img/pet.png';
 
 
 const Home = () => {
