@@ -10,33 +10,56 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 @Data
-public class PageResultDTO<DTO, Entity> {
+public class PageResultDTO<DTO, EN> {
 
+    //DTO리스트
     private List<DTO> dtoList;
+
+    //총 페이지 번호
     private int totalPage;
+
+    //현재 페이지 번호
     private int page;
+    //목록 사이즈
     private int size;
+
+    //시작 페이지 번호, 끝 페이지 번호
     private int start, end;
+
+    //이전, 다음
     private boolean prev, next;
+
+    //페이지 번호  목록
     private List<Integer> pageList;
-    public PageResultDTO(Page<Entity> result, Function<Entity, DTO> fn) {
-        // Function<T,R> 을 통해 map 안에서 T 를 R 로 변환 ( 반복문이 실행 중이지만 코드에 드러나지 않음 )
+
+    public PageResultDTO(Page<EN> result, Function<EN,DTO> fn ){
+
         dtoList = result.stream().map(fn).collect(Collectors.toList());
+
         totalPage = result.getTotalPages();
+
         makePageList(result.getPageable());
     }
 
-    private void makePageList(Pageable pageable) {
-        this.page = pageable.getPageNumber() + 1;
+
+    private void makePageList(Pageable pageable){
+
+        this.page = pageable.getPageNumber() + 1; // 0부터 시작하므로 1을 추가
         this.size = pageable.getPageSize();
 
-        // temp end page
+        //temp end page
         int tempEnd = (int)(Math.ceil(page/10.0)) * 10;
 
         start = tempEnd - 9;
+
         prev = start > 1;
-        end = totalPage > tempEnd ? tempEnd : totalPage;
+
+        end = totalPage > tempEnd ? tempEnd: totalPage;
+
         next = totalPage > tempEnd;
+
         pageList = IntStream.rangeClosed(start, end).boxed().collect(Collectors.toList());
+
     }
+
 }

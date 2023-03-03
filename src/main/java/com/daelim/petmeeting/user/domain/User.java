@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @Table(name = "tbl_user")
 public class User extends BaseTimeEntity implements UserDetails {
     @Id
