@@ -11,8 +11,8 @@ import java.util.List;
 public interface PReplyRepository extends JpaRepository<PReply, Long> {
 
     @Modifying
-    @Query("DELETE FROM PReply r WHERE r.pBoard.pbid =:bno")
+    @Query("DELETE FROM PReply r WHERE r.pboard.pbid =:bno")
     void deleteByBno(Long bno);
 
-    List<PReply> getPRepliesByPBoardOOrderByPrid(PBoard board);
+    List<PReply> getPRepliesByPboardOrderByPrid(PBoard board);
 }

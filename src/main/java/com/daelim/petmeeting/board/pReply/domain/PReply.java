@@ -22,7 +22,7 @@ public class PReply extends BaseTimeEntity {
     private Long prid;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private PBoard pBoard;
+    private PBoard pboard;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;

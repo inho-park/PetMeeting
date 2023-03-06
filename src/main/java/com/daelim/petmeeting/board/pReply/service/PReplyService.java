@@ -25,7 +25,7 @@ public class PReplyService {
 
     public List<ReplyDTO> getList(Long bno) {
         List<PReply> result
-                = replyRepository.getPRepliesByPBoardOOrderByPrid(
+                = replyRepository.getPRepliesByPboardOrderByPrid(
                         PBoard.builder().pbid(bno).build());
 
         return result.stream().map(pReply -> entityToDTO(pReply)).collect(Collectors.toList());
@@ -50,7 +50,7 @@ public class PReplyService {
                 .prid(replyDTO.getRno())
                 .content(replyDTO.getText())
                 .user(user)
-                .pBoard(board)
+                .pboard(board)
                 .build();
         return reply;
     }

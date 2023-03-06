@@ -3,6 +3,7 @@ import com.daelim.petmeeting.board.dto.PageRequestDTO;
 import com.daelim.petmeeting.board.pBoard.dto.PBoardDTO;
 import com.daelim.petmeeting.board.pBoard.service.PboardService;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -11,17 +12,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RestController
 @RequestMapping("/pb/")
 public class PboardController {
+    @Autowired
     private PboardService pboardService;
 
-//    @PostMapping
-//    public ResponseEntity<?> create(@RequestBody CreateRequestDTO dto) {
-//        try {
-//
-//            return ResponseEntity<?>
-//        }catch(Exception e) {
-//
-//        }
-//    }
 
     @GetMapping({"/list","/"})
     public void list(PageRequestDTO pageRequestDTO,
@@ -33,7 +26,8 @@ public class PboardController {
 
     @GetMapping("/register")
     public void register() { log.info("register get.........................");};
-    @GetMapping("/register")
+
+    @PostMapping("/register")
     public String register(PBoardDTO dto, RedirectAttributes redirectAttributes ) {
         redirectAttributes.addFlashAttribute("response",pboardService.retrieve(dto));
         log.info("dto : " + dto);
